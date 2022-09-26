@@ -1,5 +1,6 @@
 import React from 'react'
 import SongList from './SongList'
+import RockSongList from './SongList'
 import SongForm from './SongForm'
 import Delete from './Delete'
 
@@ -9,7 +10,7 @@ class SongOverview extends React.Component {
       super()
       this.state = 
       {
-        songs: []
+        songs: [],
       }
       this.emptySongList = this.emptySongList.bind(this)
     }
@@ -41,16 +42,17 @@ class SongOverview extends React.Component {
                 
                 <SongForm addSong={this.addSong}/>
                         <table style={{width: "100%"}}>
-                          <thead>  
+                          <thead>
                             <tr className="song-header">  
                                   <th className="song-row__item">Song (A-Z)</th>
                                   <th className="song-row__item">Artist</th>
                                   <th className="song-row__item">Genre</th>
                                   <th className="song-row__item">Rating</th>
                             </tr>
-                         </thead>
+                          </thead>
                         </table>
                 <SongList songs={this.state.songs}/>
+                <RockSongList songs={this.state.songs}/>
                 <Delete clickButton={this.emptySongList}/>
         </div>
       );

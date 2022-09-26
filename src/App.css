@@ -36,3 +36,15 @@
     transform: rotate(360deg);
   }
 }
+
+.song-row__item {
+  background-color: #61dafb;
+}
+
+.song-item {
+  background-color: #61dafb;
+}
+
+table {
+  table-layout: fixed;
+}

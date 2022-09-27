@@ -3,6 +3,7 @@ import SongList from './SongList'
 import RockSongList from './SongList'
 import SongForm from './SongForm'
 import Delete from './Delete'
+import FilterGenre from './FilterGenre'
 
 class SongOverview extends React.Component {
 
@@ -13,6 +14,7 @@ class SongOverview extends React.Component {
         songs: [],
       }
       this.emptySongList = this.emptySongList.bind(this)
+      this.filterSongList = this.filterSongList.bind(this)
     }
   
     addSong = (song) => {
@@ -36,6 +38,19 @@ class SongOverview extends React.Component {
         this.setState({songs: []});
     } 
 
+    filterSongList(value) {
+      console.log(value)
+        
+      this.setState((prevState) => {
+        const filteredSongs = [...prevState.songs]
+        console.log("This is the new array:",filteredSongs)
+        const filterSongList = filteredSongs
+        const filteredItems = filterSongList.filter((item) => {return item.genre === value})
+        const newState = {...prevState , songs: filteredItems}
+        return newState;
+      })
+    }
+
     render() {
       return (
         <div>
@@ -46,7 +61,7 @@ class SongOverview extends React.Component {
                             <tr className="song-header">  
                                   <th className="song-row__item">Song (A-Z)</th>
                                   <th className="song-row__item">Artist</th>
-                                  <th className="song-row__item">Genre</th>
+                                  <th className="song-row__item">Genre <FilterGenre onSubmit={this.filterSongList}/></th>
                                   <th className="song-row__item">Rating</th>
                             </tr>
                           </thead>

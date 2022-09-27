@@ -52,8 +52,9 @@ class SongForm extends React.Component {
                 <select
                     value={this.state.genre}
                     onChange={this.handleChange}
+                    placeholder="Genre" 
                     name="genre" >
-                        <option value=""></option>
+                        <option value="">-- Select Genre --</option>
                         <option value="Rock">Rock</option>
                         <option value="Pop">Pop</option>
                         <option value="Classic">Classic</option>
@@ -62,7 +63,7 @@ class SongForm extends React.Component {
                     value={this.state.rating}
                     onChange={this.handleChange}
                     name="rating" >
-                        <option value=""></option>
+                        <option value="">-- Select Rating --</option>
                         <option value="1">1</option>
                         <option value="2">2</option>
                         <option value="3">3</option>

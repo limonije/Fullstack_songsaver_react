@@ -13,35 +13,30 @@ class FilterGenre extends React.Component {
 
     handleChange(event) {
         this.setState({value: event.target.value});
-      }
+    }
 
     handleSubmit = (event) => {
         event.preventDefault();
         this.props.onSubmit(this.state.value);
         this.setState({
-          value: ""
+            value: "", 
         });
     }    
     
-
     render() {
         return (
-            <form onSubmit={this.handleSubmit}>
-            <label>
-            Pick your favorite genre:
-            <select
+            <form className="filter-form" onSubmit={this.handleSubmit}>
+                <select
                     value={this.state.value}
                     onChange={this.handleChange}
                     >
-                        <option />
+                        <option value="">-- Your Favorite Genre --</option>
                         <option value="Rock">Rock</option>
                         <option value="Pop">Pop</option>
                         <option value="Classic">Classic</option>
                 </select>
-                </label>
                 <input type="submit" value="Submit" />
                 </form>
-
         );
     }
 }

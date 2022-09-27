@@ -75,7 +75,6 @@ class SongOverview extends React.Component {
     render() {
       return (
         <div>
-               
                 <SongForm addSong={this.addSong}/>
                 <Delete clickButton={this.emptySongList}/>
                         <table style={{width: "100%"}}>
@@ -90,11 +89,9 @@ class SongOverview extends React.Component {
                         </table>
                 <SongList songs={this.state.songs}/>
                 <Show clickButton={this.savedSongList}/>
-                
                 <RockSongs songs={this.state.rockSongs}/>
                 <PopSongs songs={this.state.popSongs}/>
                 <ClassicSongs songs={this.state.classicSongs}/>
-                
         </div>
       );
     }
